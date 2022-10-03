@@ -16,7 +16,11 @@ countriesStore.fetchCountries();
 </template>
 
 <style>
-body {
-  background-color: antiquewhite;
+.app {
+  background-color: whitesmoke;
+}
+
+h1,h2 {
+  color:black;
 }
 </style>

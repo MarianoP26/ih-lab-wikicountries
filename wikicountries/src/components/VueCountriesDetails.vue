@@ -2,6 +2,7 @@
 import { useCountriesStore } from '../stores/store.js';
 import { computed, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router'
+import VueSpinner from './VueSpinner.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -53,6 +54,9 @@ const selectedCountry = computed(() => {
 				</tr>
 			</tbody>
 		</table>
+	</div>
+	<div v-else>
+		<VueSpinner msg="Loading"/>
 	</div>
 </template>
 

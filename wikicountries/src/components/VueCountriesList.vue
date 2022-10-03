@@ -2,6 +2,7 @@
 import {mapState} from 'pinia';
 import { useCountriesStore } from '../stores/store.js';
 import {computed} from 'vue';
+import VueSpinner from './VueSpinner.vue';
 
 const countriesStore = useCountriesStore();
 const countries = computed(() => {
@@ -11,7 +12,7 @@ const countries = computed(() => {
 </script>
 
 <template>
-  <div class="container">
+  <div v-if="countries" class="container">
 		<div class="row">
 			<div class="col-5" style="max-height: 90vh; overflow: scroll">
 				<div class="list-group">
@@ -26,6 +27,9 @@ const countries = computed(() => {
 				<router-view />
 			</div>
 		</div>
+	</div>
+	<div v-else>
+		<VueSpinner msg="Loading countries"/>
 	</div>
 </template>
 

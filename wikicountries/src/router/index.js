@@ -6,12 +6,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'root',
-      component: () => import(/* webpackChunkName: 'index' */ '../views/Home.vue'),
+      component: () => import('../views/Home.vue'),
     },
     {
       path: '/details/:alpha3code',
       name: 'details',
-      component: () => import(/* webpackChunkName: 'list' */ '../components/VueCountriesDetails.vue'),
+      component: () => import('../components/VueCountriesDetails.vue'),
     }
   ]
 });
